@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Таймер</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="Таймер.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 3.30.2, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+	        	<link rel="stylesheet" href="css/styles_6aa74a7d572c9ec3e83a3f88c2be5a0f.css" />
+
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "images/logo5.png"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Таймер">
+    <meta property="og:type" content="website">
+  </head>
+  
+
+  
+  <body class="u-body"><header class="u-clearfix u-header" id="sec-5627" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
+        <a href="https://nicepage.review" class="u-image u-logo u-image-1" data-image-width="178" data-image-height="117">
+          <img src="images/logo5.png" class="u-logo-image u-logo-image-1">
+        </a>
+        <a href="Слайдер.html" data-page-id="80530901" class="u-active-none u-border-2 u-border-palette-1-base u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-btn-1">Слайдер</a>
+        <a href="Таймер.html" data-page-id="565621324" class="u-active-none u-border-2 u-border-palette-1-base u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-btn-2">Таймер</a>
+        <a href="YouTube.html" data-page-id="489012819" class="u-active-none u-border-2 u-border-palette-1-base u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-btn-3">YouTube</a>
+      </div></header>
+  
+    
+    <div class="content-main">
+                
+                <input id="setTitle" type="text" value="Таймер онлайн со звуком" autocomplete="none"/>
+                <div class="button" id="title-edit-btn">
+                    <a class="save" href="javascript:saveEditTitle();">Сохранить</a>
+                    <a class="cancel" href="javascript:closeEditTitle();">Отменить</a>
+                </div>
+                <div class="timer-sets" id="timer-sets">
+                    <a href="javascript:timerSet(1,false)">+1м</a>
+                    <a href="javascript:timerSet(5,false)">+5м</a>
+                    <a href="javascript:timerSet(10,false)">+10м</a>
+                    <a href="javascript:timerSet(15,false)">+15м</a>
+                    <a href="javascript:timerSet(30,false)">+30м</a>
+                    <a href="javascript:timerSet(60,false)">+1ч</a>
+                    <a class="add" href="javascript:timerShowAdd()">+</a>
+                    
+                </div>
+                <div id="timerAddBlock">
+                    <input id="timerAddHour" name="timerAddHour" type="number" max="24" min="0" value="0" required><label>Ч</label>
+                    <input id="timerAddMinute" name="timerAddMinute" type="number" max="60" min="0" value="10" required><label>М</label>
+                    <input id="timerAddSecond" name="timerAddSecond" type="number" max="60" min="0" value="0" required><label>С</label>
+                    <input id="timerAddName" name="timerAddName" type="text" maxlength="10" placeholder="описание" required><label></label>
+                    <a class="addButton" href="javascript:timerSetAdd($('#timerAddHour').val(),$('#timerAddMinute').val(),$('#timerAddSecond').val(),$('#timerAddName').val())">Добавить</a>
+                </div>
+                <div class="timer-container">
+                    <span class="timer" id="timer"><span data-max="101">00</span>:<span data-max="24">00</span>:<span data-max="60">00</span>.00</span>
+                    <div class="timer-edit" id="timer-edit">
+                        <input id="setHour" type="number" value="0" min="0" max="99" autocomplete="none"/><span>:</span>
+                        <input id="setMinute" type="number" value="0" min="0" max="59" autocomplete="none"/><span>:</span>
+                        <input id="setSecond" type="number" value="0" min="0" max="59" autocomplete="none"/><span>.00</span>
+                    </div>
+                    <div class="button" id="timer-edit-btn">
+                        <a class="save" href="javascript:saveEditTime();">Сохранить</a>
+                        <a class="cancel" href="javascript:closeEditTime();">Отменить</a>
+                    </div>
+                </div>
+                <div class="timer-sets">
+                    <a href="javascript:timerSet(1,1)">1 минута</a>
+                    <a href="javascript:timerSet(2,1)">2 минуты</a>
+                    <a href="javascript:timerSet(5,1)">5 минут</a>
+                    <a href="javascript:timerSet(10,1)">10 минут</a>
+                    <a href="javascript:timerSet(15,1)">15 минут</a>
+                    <a href="javascript:timerSet(30,1)">30 минут</a>
+                    <a href="javascript:timerSet(60,1)">60 минут</a>
+                    <a href="javascript:timerSet(120,1)">120 минут</a>
+                </div>
+                <div class="button-block">
+                    <div class="button"><a class="start" id="start" href="javascript:start();"></a></div>
+                    <div class="button"><a class="stop disabled" id="stop" href="javascript:kill();"></a></div>
+                    <div class="button"><a class="refresh" id="refresh" href="javascript:refresh();"></a></div>
+                    <a class="sound max" href="javascript:soundSwitch()"></a>
+                </div>
+                <div class="hotkeys">
+                    <strong>ПРОБЕЛ</strong> - старт/стоп,
+                    <strong>ESC</strong> - обнулить
+                </div>
+            </div>
+           
+
+        <div class="citem_mobile1"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- timer_mobile1 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8091271152268111"
+     data-ad-slot="7582607207"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+
+
+<!-- timer_ad4 -->
+
+  
+<!-- timer_ad5 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8091271152268111"
+     data-ad-slot="4026505573"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div>
+        </div>
+
+    </div>
+
+	<script src="scripts_471d27dcadc9d16a58c2308ba912ddc2.js"></script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(28251366, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+    });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/28251366" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+    
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-b001"><div class="u-align-left u-clearfix u-sheet u-sheet-1">
+        <h6 class="u-align-center u-text u-text-1">
+          <span class="u-text-palette-5-dark-1"> Обращаем Ваше внимание на то, что все объявления о моделях автомобилей, размещенные на настоящем интернет-сайте, носят исключительно информационный характер и ни при каких условиях не являются публичной офертой, определяемой положениями Статьи 437 Гражданского кодекса Российской Федерации. Для получения точной информации о наличии моделей с требуемой комплектацией, техническими характеристиками и цветовыми сочетаниями, а также точной стоимости автомобилей, пожалуйста, обращайтесь к менеджерам соответствующего автосалона©&nbsp;<br>
+          </span>
+          <br>
+          <span class="u-text-palette-5-dark-1">2021 Rolls-Royce Motor Cars Moscow - неофициальный Rolls-Royce сайт в России.</span>
+        </h6>
+      </div></footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
+        <span>Website Templates</span>
+      </a>
+      <p class="u-text">
+        <span>created with</span>
+      </p>
+      <a class="u-link" href="" target="_blank">
+        <span>Website Builder Software</span>
+      </a>. 
+    </section>
+  </body>
+</html>
